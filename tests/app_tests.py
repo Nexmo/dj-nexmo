@@ -61,8 +61,8 @@ def test_parse_part(partial_message):
     assert sms.concat_total == 9
     assert sms.concat_ref == "78"
     assert sms.keyword == "LOREM"
-    assert (
-        sms.message_timestamp == datetime(2018, 4, 24, 14, 5, 19, tzinfo=timezone.utc)
+    assert sms.message_timestamp == datetime(
+        2018, 4, 24, 14, 5, 19, tzinfo=timezone.utc
     )
     assert sms.message_id == "0B000000D0EBB58D"
     assert sms.msisdn == "447700900419"
@@ -84,8 +84,8 @@ def test_to_model(partial_message):
     assert sms.concat_total == 9
     assert sms.concat_ref == "78"
     assert sms.keyword == "LOREM"
-    assert (
-        sms.message_timestamp == datetime(2018, 4, 24, 14, 5, 19, tzinfo=timezone.utc)
+    assert sms.message_timestamp == datetime(
+        2018, 4, 24, 14, 5, 19, tzinfo=timezone.utc
     )
     assert sms.message_id == "0B000000D0EBB58D"
     assert sms.msisdn == "447700900419"
@@ -255,25 +255,27 @@ def test_decorator_multipart(rf):
 
     view = MagicMock(return_value=sentinel.response)
     webhook = d.sms_webhook(validate_signature=False)(view)
-    
+
     requests = [
         rf.post(
             "/sms/incoming",
             content_type="application/json",
-            data=json.dumps({
-                "concat": "true",
-                "concat-part": f"{index + 1}",
-                "concat-ref": "78",
-                "concat-total": f"{len(parts)}",
-                "keyword": "LOREM",
-                "message-timestamp": "2018-04-24 14:05:19",
-                "messageId": f"0B000000D0EBB58{index}",
-                "msisdn": "447700900419",
-                "text": part,
-                "timestamp": "1524578719",
-                "to": "447700900996",
-                "type": "unicode",
-            }),
+            data=json.dumps(
+                {
+                    "concat": "true",
+                    "concat-part": f"{index + 1}",
+                    "concat-ref": "78",
+                    "concat-total": f"{len(parts)}",
+                    "keyword": "LOREM",
+                    "message-timestamp": "2018-04-24 14:05:19",
+                    "messageId": f"0B000000D0EBB58{index}",
+                    "msisdn": "447700900419",
+                    "text": part,
+                    "timestamp": "1524578719",
+                    "to": "447700900996",
+                    "type": "unicode",
+                }
+            ),
         )
         for index, part in enumerate(parts)
     ]
@@ -288,4 +290,10 @@ def test_decorator_multipart(rf):
 
     assert len(view.mock_calls) == 1
     name, args, kwargs = view.mock_calls[0]
-    assert args[0].sms.text == 'This is a multipart message'
+    assert args[0].sms.text == "This is a multipart message"
+
+
+def test_timezone():
+    from django.conf import settings
+
+    assert settings.TIMEZONE == "UTC"
