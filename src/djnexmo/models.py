@@ -2,11 +2,12 @@ from django.db import models
 
 
 class SMSMessagePart(models.Model):
+
     class Meta:
         ordering = ("-concat_ref", "concat_part")
         unique_together = ("concat_ref", "concat_part")
-        verbose_name = 'Message Part'
-        verbose_name_plural = 'Message Parts'
+        verbose_name = "Message Part"
+        verbose_name_plural = "Message Parts"
 
     concat_ref = models.CharField(max_length=32, db_index=True)
 
@@ -32,4 +33,6 @@ class SMSMessagePart(models.Model):
     concat_total = models.IntegerField()
 
     def __str__(self):
-        return f"Message {self.concat_ref}: {self.text!r} (Part {self.concat_part} of {self.concat_total})"
+        return (
+            f"Message {self.concat_ref}: {self.text!r} (Part {self.concat_part} of {self.concat_total})"
+        )

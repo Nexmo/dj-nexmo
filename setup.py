@@ -8,9 +8,7 @@ setup(
     package_dir={"": "src"},
     zip_safe=True,
     entry_points={
-        'console_scripts': [
-            'dj = django.core.management:execute_from_command_line',
-        ],
+        "console_scripts": ["dj = django.core.management:execute_from_command_line"]
     },
     install_requires=[
         "nexmo ~= 2.0.0",

@@ -5,13 +5,15 @@ from django.db import migrations
 
 class Migration(migrations.Migration):
 
-    dependencies = [
-        ('djnexmo', '0004_auto_20180427_1517'),
-    ]
+    dependencies = [("djnexmo", "0004_auto_20180427_1517")]
 
     operations = [
         migrations.AlterModelOptions(
-            name='smsmessagepart',
-            options={'ordering': ('-concat_ref', 'concat_part'), 'verbose_name': 'Message Part', 'verbose_name_plural': 'Message Parts'},
-        ),
+            name="smsmessagepart",
+            options={
+                "ordering": ("-concat_ref", "concat_part"),
+                "verbose_name": "Message Part",
+                "verbose_name_plural": "Message Parts",
+            },
+        )
     ]

@@ -44,13 +44,10 @@ class IncomingSMS:
     concat_ref = attr.ib(type=str, default=None)
     concat_total = attr.ib(type=int, default=None)
 
-    def reply(self, text, type='text'):
-        client.send_message({
-            'to': self.msisdn,
-            'from': self.to,
-            'text': text,
-            'type': type,
-        })
+    def reply(self, text, type="text"):
+        client.send_message(
+            {"to": self.msisdn, "from": self.to, "text": text, "type": type}
+        )
 
     def to_model(self):
         data = {a.name: getattr(self, a.name) for a in attr.fields(self.__class__)}
@@ -121,6 +118,7 @@ def sms_webhook(func=None, *, validate_signature=True):
     """
 
     def decorator(func):
+
         @wraps(func)
         @csrf_exempt
         @require_POST
@@ -160,9 +158,7 @@ def _handle_message_part(request, data, wrapped_func, args, kwargs):
         return HttpResponse("Partial message already stored.")
 
     # Then query if we have all the parts
-    matching_parts = SMSMessagePart.objects.filter(
-        concat_ref=incoming_sms.concat_ref
-    )
+    matching_parts = SMSMessagePart.objects.filter(concat_ref=incoming_sms.concat_ref)
     count = matching_parts.count()
     expected = incoming_sms.concat_total
     if count == expected:
