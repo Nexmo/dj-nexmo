@@ -15,11 +15,14 @@ from django.views.decorators.http import require_POST
 
 import attr
 from marshmallow import Schema, fields, post_load
+import pytz
 
 from .models import SMSMessagePart
 
 from . import client
 
+
+TZ_LONDON = pytz.timezone('Europe/London')
 
 @attr.s
 class IncomingSMS:
@@ -59,7 +62,8 @@ class Timestamp(fields.Field):
     """ Marshmallow Field to convert a UTC unix time into a UTC timezone-aware datetime. """
 
     def _deserialize(self, value, attr, data):
-        return datetime.fromtimestamp(int(value)).astimezone(timezone.utc)
+        # `value` is a UNIX timestamp in Europe/London tz, as a string 🙄
+        return datetime.utcfromtimestamp(int(value)).replace(tzinfo=timezone.utc)
 
 
 class IncomingSMSSchema(Schema):

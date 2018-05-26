@@ -1,12 +1,10 @@
 
 from datetime import datetime, timezone
 import json
-from pprint import pprint
 
 import django
 from django.db import transaction
 
-import djnexmo as n
 import djnexmo.decorators as d
 import djnexmo.models as models
 
@@ -263,12 +261,12 @@ def test_decorator_multipart(rf):
             data=json.dumps(
                 {
                     "concat": "true",
-                    "concat-part": f"{index + 1}",
+                    "concat-part": "{index_1b}".format(index_1b=index + 1),
                     "concat-ref": "78",
-                    "concat-total": f"{len(parts)}",
+                    "concat-total": "{parts_len}".format(parts_len=len(parts)),
                     "keyword": "LOREM",
                     "message-timestamp": "2018-04-24 14:05:19",
-                    "messageId": f"0B000000D0EBB58{index}",
+                    "messageId": "0B000000D0EBB58{index}".format(index=index),
                     "msisdn": "447700900419",
                     "text": part,
                     "timestamp": "1524578719",

@@ -34,5 +34,7 @@ class SMSMessagePart(models.Model):
 
     def __str__(self):
         return (
-            f"Message {self.concat_ref}: {self.text!r} (Part {self.concat_part} of {self.concat_total})"
+            "Message {self.concat_ref}: {self.text!r} (Part {self.concat_part} of {self.concat_total})".format(
+                self=self,
+            )
         )
