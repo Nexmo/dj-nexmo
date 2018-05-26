@@ -5,7 +5,6 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
 def pytest_configure():
-    print("CONFIGUER")
     settings.configure(
         DEBUG=True,
         INSTALLED_APPS=["djnexmo"],
