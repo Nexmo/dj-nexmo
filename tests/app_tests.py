@@ -291,9 +291,3 @@ def test_decorator_multipart(rf):
     assert len(view.mock_calls) == 1
     name, args, kwargs = view.mock_calls[0]
     assert args[0].sms.text == "This is a multipart message"
-
-
-def test_timezone():
-    from django.conf import settings
-
-    assert settings.TIMEZONE == "UTC"
