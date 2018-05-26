@@ -3,7 +3,7 @@ djnexmo.decorators - decorators that make it easier to work with Nexmo.
 
 
 """
-from enum import Enum
+
 from datetime import datetime, timezone
 from functools import wraps
 import json
@@ -88,7 +88,7 @@ class IncomingSMSSchema(Schema):
     def make_sms(self, data):
         d = data["message_timestamp"]
         if d.tzinfo is None:
-            data["message_timestamp"] = d.astimezone(timezone.utc)
+            data["message_timestamp"] = d.replace(tzinfo=timezone.utc)
         return IncomingSMS(**data)
 
 
