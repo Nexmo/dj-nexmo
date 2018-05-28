@@ -12,6 +12,8 @@ tox = "*"
 pytest-cov = "*"
 black = "*"
 ipython = "*"
+twine = "*"
+invoke = "~= 1.0.0"
 
 [pipenv]
 allow_prereleases = true
