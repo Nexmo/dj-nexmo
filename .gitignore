@@ -121,3 +121,5 @@ media
 
 
 # End of https://www.gitignore.io/api/django
+# Built by `inv build`:
+README.rst

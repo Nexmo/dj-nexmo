@@ -1,0 +1,9 @@
+include *.py
+include *.in
+include *.lock
+include *.md
+include Pipfile
+include tox.ini
+include .editorconfig
+exclude README.rst
+recursive-include tests *.py
