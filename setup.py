@@ -4,6 +4,11 @@ from setuptools import setup, find_packages
 setup(
     name="dj-nexmo",
     version="0.0.1-dev",
+    author="Nexmo Developer Relations",
+    author_email="devrel@nexmo.com",
+    url="https://developer.nexmo.com/",
+    description="Utilities for Django developers using Nexmo's APIs",
+
     packages=find_packages("src"),
     package_dir={"": "src"},
     zip_safe=True,
@@ -16,5 +21,17 @@ setup(
         "attrs          ~= 17.4.0",
         "marshmallow    ~= 3.0.0b8",
         "phonenumbers   ~= 8.9.4",
+    ],
+    classifiers=[
+        "Development Status :: 3 - Alpha",
+        "Framework :: Django :: 2.0",
+        "Intended Audience :: Developers",
+        "License :: OSI Approved :: Apache Software License",
+        "Operating System :: OS Independent",
+        "Programming Language :: Python :: 3",
+        "Programming Language :: Python :: 3.5",
+        "Programming Language :: Python :: 3.6",
+        "Programming Language :: Python :: 3 :: Only",
+        "Topic :: Communications :: Telephony",
     ],
 )
