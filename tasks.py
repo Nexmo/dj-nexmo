@@ -3,7 +3,7 @@ from invoke import task
 
 @task
 def build(c):
-    c.run("pandoc -f markdown -t rst -o README.rst README.md")
+    # c.run("pandoc -f markdown -t rst -o README.rst README.md")
     c.run("python setup.py bdist_wheel sdist")
 
 
