@@ -2,6 +2,7 @@ from django.conf import settings
 
 import nexmo
 
+__version__ == '0.0.1-dev'
 
 default_app_config = "djnexmo.apps.NexmoConfig"
 
