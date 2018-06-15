@@ -9,6 +9,8 @@ This Django app provides Django-specific functionality on top of the [Nexmo Clie
 
 ## How To Install It
 
+Currently, `dj-nexmo` **only** supports Python 3.5+, and Django 2.0+. We _may_ backport to Django 1.x, but we have no intention of backporting to Python 2.
+
 First, `pip install dj-nexmo`
 
 Add `"djnexmo"` to `INSTALLED_APPS` in your settings.
