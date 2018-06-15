@@ -3,7 +3,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="dj-nexmo",
-    version="0.0.1-dev3",
+    version="0.0.1",
     author="Nexmo Developer Relations",
     author_email="devrel@nexmo.com",
     url="https://developer.nexmo.com/",
