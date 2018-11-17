@@ -1,0 +1,26 @@
+language: python
+cache: pip
+
+python:
+  - 3.4
+  - 3.5
+  - 3.6
+
+env:
+  - DJANGO=2.0
+  - DJANGO=2.1
+
+matrix:
+  exclude:
+    # Python/Django combinations that aren't officially supported
+    - { python: 3.4, env: DJANGO=2.1 }
+  include:
+    # Work around Travis Python 3.7 issue: https://github.com/travis-ci/travis-ci/issues/9815
+    - { python: 3.7, env: DJANGO=2.0, dist: xenial, sudo: true }
+    - { python: 3.7, env: DJANGO=2.1, dist: xenial, sudo: true }
+
+install:
+  - pip install tox-travis
+
+script:
+  - tox

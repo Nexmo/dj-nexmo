@@ -19,15 +19,16 @@ setup(
         "console_scripts": ["dj = django.core.management:execute_from_command_line"]
     },
     install_requires=[
-        "nexmo          >= 2.0.0,<3.0",
+        "nexmo          >= 2.0.0,<2.1",
         "django         >= 2.0.0",
         "attrs          ~= 17.4.0",
-        "marshmallow    ~= 3.0.0b8",
+        "marshmallow    == 3.0.0b11",
         "phonenumbers   ~= 8.9.4",
     ],
     classifiers=[
         "Development Status :: 4 - Beta",
         "Framework :: Django :: 2.0",
+        "Framework :: Django :: 2.1",
         "Intended Audience :: Developers",
         "License :: OSI Approved :: Apache Software License",
         "Operating System :: OS Independent",

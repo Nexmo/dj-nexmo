@@ -13,7 +13,7 @@ This Django app provides Django-specific functionality on top of the [Nexmo Clie
 
 ## How To Install It
 
-Currently, `dj-nexmo` **only** supports Python 3.3+, and Django 2.0+. We _may_ backport to Django 1.x, but we have no intention of backporting to Python 2.
+Currently, `dj-nexmo` **only** supports Python 3.4+, and Django 2.0+. We _may_ backport to Django 1.x, but we have no intention of backporting to Python 2.
 
 First, `pip install dj-nexmo`
 
@@ -54,7 +54,7 @@ your private key.
 
 ## Using the Nexmo Client
 
-`dj-nexmo` configures a Nexmo `Client` object from the settings above. You can 
+`dj-nexmo` configures a Nexmo `Client` object from the settings above. You can
 use it by importing it from the `djnexmo` package:
 
 ```python
@@ -80,10 +80,10 @@ available.
 def sms_registration(request):
     # Your parsed & merged SMS message will be available as `request.sms`:
     sms = request.sms
-    
-    # Don't do any long processing here - you should return a 200 response as soon as possible. 
+
+    # Don't do any long processing here - you should return a 200 response as soon as possible.
     ...
-    
+
     return HttpResponse("OK")
 ```
 
@@ -108,7 +108,7 @@ Local Format: {{ "447700900486" | national }}       => 07700 900486
 
 ## License
 
-This code is open-source, released under the Apache License. This means it is free to use 
+This code is open-source, released under the Apache License. This means it is free to use
 for commercial or non-commercial purposes, and you can make any changes you would like or need.
 
 
@@ -122,6 +122,6 @@ demonstrates the problem you've seen would be very useful and means we should be
 your problem sooner!
 
 
-[Nexmo API]: https://developer.nexmo.com/ 
-[phonenumbers]: https://github.com/google/phonenumbers 
+[Nexmo API]: https://developer.nexmo.com/
+[phonenumbers]: https://github.com/google/phonenumbers
 [Nexmo Client Library for Python]: https://github.com/nexmo/nexmo-python
