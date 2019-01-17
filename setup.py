@@ -6,7 +6,7 @@ setup(
     version="0.0.1",
     author="Nexmo Developer Relations",
     author_email="devrel@nexmo.com",
-    url="https://developer.nexmo.com/",
+    url="https://github.com/Nexmo/dj-nexmo/",
     description="Utilities for Django developers using Nexmo's APIs",
 
     long_description=open("README.md").read(),
