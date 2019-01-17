@@ -1,3 +1,6 @@
+## v0.0.4
+* Fix Nexmo client initialization.
+
 ## v0.0.3
 * Correct the depencency specifiers in v0.0.2.
 
