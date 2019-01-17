@@ -7,8 +7,8 @@ __version__ = '0.0.3'
 default_app_config = "djnexmo.apps.NexmoConfig"
 
 client = nexmo.Client(
-    api_key=getattr(settings, "NEXMO_API_KEY", None),
-    api_secret=getattr(settings, "NEXMO_API_SECRET", None),
+    key=getattr(settings, "NEXMO_API_KEY", None),
+    secret=getattr(settings, "NEXMO_API_SECRET", None),
     signature_secret=getattr(settings, "NEXMO_SIGNATURE_SECRET", None),
     signature_method=getattr(settings, "NEXMO_SIGNATURE_METHOD", None),
     application_id=getattr(settings, "NEXMO_APPLICATION_ID", None),
