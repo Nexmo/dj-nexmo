@@ -121,7 +121,6 @@ too! If you find a bug, please create an issue - any help you can give providing
 demonstrates the problem you've seen would be very useful and means we should be able to solve
 your problem sooner!
 
-
 [Nexmo API]: https://developer.nexmo.com/
-[phonenumbers]: https://github.com/google/phonenumbers
+[phonenumbers]: https://github.com/daviddrysdale/python-phonenumbers
 [Nexmo Client Library for Python]: https://github.com/nexmo/nexmo-python
