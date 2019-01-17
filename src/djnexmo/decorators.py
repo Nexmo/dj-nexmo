@@ -14,7 +14,7 @@ from django.views.decorators.csrf import csrf_exempt
 from django.views.decorators.http import require_POST
 
 import attr
-from marshmallow import Schema, fields, post_load
+from marshmallow import Schema, fields, post_load, EXCLUDE
 import pytz
 
 from .models import SMSMessagePart
@@ -87,6 +87,9 @@ class IncomingSMSSchema(Schema):
     # TODO: Need to do something with these:
     data = fields.Str()
     udh = fields.Str()
+
+    class Meta:
+        unknown = EXCLUDE
 
     @post_load
     def make_sms(self, data):

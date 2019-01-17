@@ -105,10 +105,10 @@
         },
         "django": {
             "hashes": [
-                "sha256:a32c22af23634e1d11425574dce756098e015a165be02e4690179889b207c7a8",
-                "sha256:d6393918da830530a9516bbbcbf7f1214c3d733738779f06b0f649f49cc698c3"
+                "sha256:0292a7ad7d8ffc9cfc6a77f043d2e81f5bbc360c0c4a1686e130ef3432437d23",
+                "sha256:e89f613e3c1f7ff245ffee3560472f9fa9c07060b11f65e1de3cb763f8dcd4b9"
             ],
-            "version": "==2.1.5"
+            "version": "==2.0.10"
         },
         "e1839a8": {
             "editable": true,
@@ -123,10 +123,10 @@
         },
         "marshmallow": {
             "hashes": [
-                "sha256:6ead3c21519714521882f2d76082f6d7cb51be2b6c443bdeea70248f8f3be012",
-                "sha256:c6b162ce3544cb4acbe8ce7676ec61aac9fa0a69714be10ded5163e7195d4e11"
+                "sha256:313836a251e67d2ef06631f3bddfffdd7d1c5b16b4efc76244afa6218c5e17b0",
+                "sha256:c850c60dbb840860f58f161b81ae25cf84807eeae3f9a1d9a2f8c704d6bd2b80"
             ],
-            "version": "==3.0.0b11"
+            "version": "==3.0.0rc3"
         },
         "nexmo": {
             "hashes": [
