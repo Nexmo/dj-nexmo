@@ -108,9 +108,7 @@ Local Format: {{ "447700900486" | national }}       => 07700 900486
 
 ## License
 
-This code is open-source, released under the Apache License. This means it is free to use
-for commercial or non-commercial purposes, and you can make any changes you would like or need.
-
+This code is open-source, released under the [Apache License](LICENSE). This means it is free to use for commercial or non-commercial purposes, and you can make any changes you would like or need.
 
 ## Contribute!
 
