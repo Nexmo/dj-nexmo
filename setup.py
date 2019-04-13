@@ -1,5 +1,24 @@
 from setuptools import setup, find_packages
 
+REQUIREMENTS = [
+    "nexmo          ~= 2.0",
+    "django         ~= 2.0",
+    "attrs          ~= 17.4",
+    "marshmallow    >= 3.0.0rc3",
+    "phonenumbers   ~= 8.9",
+]
+
+DEV_REQUIREMENTS = [
+    "pytest",
+    "tox",
+    "pytest-cov",
+    "pytest-django",
+    "black",
+    "ipython",
+    "twine",
+    "invoke         ~= 1.0.0",
+    "pip-tools      ~= 3.6",
+]
 
 setup(
     name="dj-nexmo",
@@ -7,24 +26,17 @@ setup(
     author="Nexmo Developer Relations",
     author_email="devrel@nexmo.com",
     url="https://github.com/Nexmo/dj-nexmo/",
-    description="Utilities for Django developers using Nexmo's APIs",
-
+    description="Utilities for Django developers using Nexmo APIs",
     long_description=open("README.md").read(),
     long_description_content_type="text/markdown",
-
     packages=find_packages("src"),
     package_dir={"": "src"},
     zip_safe=True,
     entry_points={
         "console_scripts": ["dj = django.core.management:execute_from_command_line"]
     },
-    install_requires=[
-        "nexmo          ~= 2.0",
-        "django         ~= 2.0",
-        "attrs          ~= 17.4",
-        "marshmallow    >= 3.0.0rc3",
-        "phonenumbers   ~= 8.9",
-    ],
+    install_requires=REQUIREMENTS,
+    extras_require={"dev": DEV_REQUIREMENTS},
     python_requires=">=3.4",
     classifiers=[
         "Development Status :: 4 - Beta",

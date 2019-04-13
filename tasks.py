@@ -9,4 +9,4 @@ def build(c):
 
 @task
 def clean(c):
-    c.run("rm -rf README.rst build dist")
+    c.run("rm -rf build dist")
